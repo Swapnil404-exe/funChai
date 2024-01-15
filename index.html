@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url(chai.jpg);
+      background-size: cover;
+      background-position: center;
+      padding: 0;
+      background-size: 90% 90%;
+    }
+
+    #question-container {
+      text-align: center;
+      padding: 20px;
+    }
+    h1{
+        color: white;
+    }
+
+    button {
+        display: inline-block;
+    padding: calc((1.5rem - 2px)/2) 1em;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 1;
+    font-size: 1rem;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: none;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #d5d7dd;
+    border-radius: 0.25em;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    
+      
+    }
+  </style>
+  <title>Asking Her Out</title>
+</head>
+<body >
+
+<div id="question-container">
+  <h1>Wanna go for a chai?</h1>
+  <button id="yes-button" onclick="handleYesbuttton()">Yes</button>
+  <button id="no-button" onclick="moveNoButton()">No</button>
+</div>
+
+<script>
+function handleYesbuttton(){
+    alert("Be ready by 6 in the evening");
+    location.reload()
+}
+  function moveNoButton() {
+    const noButton = document.getElementById('no-button');
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    const newX = Math.random() * (screenWidth - noButton.offsetWidth);
+    const newY = Math.random() * (screenHeight - noButton.offsetHeight);
+
+    noButton.style.position = 'absolute';
+    noButton.style.left = `${newX}px`;
+    noButton.style.top = `${newY}px`;
+  }
+</script>
+
+</body>
+</html>
